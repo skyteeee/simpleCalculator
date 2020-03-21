@@ -1,0 +1,75 @@
+h1 {
+  margin-top: 0;
+  width: 100%;
+}
+
+body {
+ background-color: black;
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+#background {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 91, 25);
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.everything {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: black;
+}
+
+.key {
+  width: calc(25% - 2px);
+  background-color: dimgray;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 0;
+  margin: 1px;
+  text-align: center;
+}
+
+.action {
+  background-color: #ff940d;
+}
+
+#clear {
+  background-color: #ff4d51;
+}
+
+.calculator {
+  background-color: black;
+  padding: 1px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.display {
+  width: 100%;
+  font-size: 50px;
+  padding: 0 25px;
+  text-align: right;
+  color: white;
+}
+
+
