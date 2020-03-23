@@ -71,11 +71,41 @@ html {
 
 .display {
   width: 100%;
-  font-size: 50px;
+  font-size: 45px;
   padding: 0 25px;
   text-align: right;
   color: white;
   background-color: #2c2c2c;
 }
 
+.key:hover {
+  background-color: #5f5f5f;
+}
 
+.key:active {
+  background-color: #373737;
+}
+
+.action:hover {
+  background-color: #f58a0d;
+}
+
+.action:active {
+  background-color: #cd6a0d;
+}
+
+#clear:hover {
+  background-color: #f54c50;
+}
+
+#clear:active {
+  background-color: #cd3f42;
+}
+
+#equal:hover {
+  background-color: #349126;
+}
+
+#equal:active {
+  background-color: #336927;
+}
