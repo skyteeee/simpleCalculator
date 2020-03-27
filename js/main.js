@@ -5,7 +5,7 @@ class Calculator {
     this.display = '0';
   }
 
-  addToCurrent (symbol) {
+  addToCurrent(symbol) {
     this.currentNumber = this.currentNumber + symbol;
     console.log("number is ", this.currentNumber);
   }
@@ -20,8 +20,49 @@ class Calculator {
     console.log('Array is ',this.input);
   }
 
-  calculate () {
-    console.log('I want to calculate ', this.input);
+  calculate(array) {
+    console.log('I want to calculate ', array);
+    let currentNumber;
+    let out;
+    for (let idx = 0; idx < array.length; idx++) {
+      currentNumber = array[idx];
+      if (isNaN(currentNumber)) {
+        switch (currentNumber) {
+          case '*':
+            out = array[idx - 1] * array[idx + 1];
+            array.splice(idx - 1, 3, out);
+            idx = 0;
+            break;
+          case '/':
+            out = array[idx - 1] / array[idx + 1];
+            array.splice(idx - 1, 3, out);
+            idx = 0;
+            break;
+          default:
+            break;
+        }
+
+      }
+
+    }
+    for (let idx = 0; idx < array.length; idx ++) {
+      currentNumber = array[idx];
+      if (isNaN(currentNumber)) {
+        switch (currentNumber) {
+          case '-':
+            out = array[idx - 1] - array[idx + 1];
+            break;
+          case '+':
+            out = array[idx - 1] + array[idx + 1];
+            break;
+        }
+        array.splice(idx - 1, 3, out);
+        idx = 0;
+      }
+    }
+    console.log(array, array[0]);
+    return array[0];
+
   }
 
 
@@ -53,12 +94,11 @@ class Calculator {
     if (this.input.length !== 0 && this.currentNumber.length !== 0) {
       let right = parseInt(this.currentNumber);
       this.input.push(right);
-      this.calculate();
-      this.display = 'answer';
+      let answer = this.calculate(this.input);
+      this.display = answer;
       this.setDisplay();
       this.input = [];
-      this.input.push('answer');
-      this.currentNumber = '0';
+      this.currentNumber = answer;
     } else {
       alert('Error. Check if everything you typed is right.');
       console.log('Error.')
@@ -70,7 +110,7 @@ class Calculator {
 
 let calc = new Calculator();
 
-function onLoad () {
+function onLoad() {
   calc.setDisplay();
 }
 
